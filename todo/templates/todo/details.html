@@ -1,0 +1,71 @@
+{% extends 'todo/_base.html' %}
+
+{% block body %}
+
+<h2 class="text-center"> <strong>{{ todo.content }}</strong></h2>
+<br>
+
+<form action="{% url 'todo:editTodo' todo.id %}" method="post">
+{% csrf_token %}
+
+	<div class="form-group">
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-3">
+				<label>Created at</label>
+				<label class="form-control">
+					{{ todo.dateCreated | date:'d/m/Y'}} - 
+					{{ todo.dateCreated | date:'h:i A' }}
+				</label>
+			</div>
+
+			<div class="col-md-2">
+				<label>Priority</label>
+				<select name="priority" class="form-control">
+					{% for item in priorityList %}
+						{% if todo.priority == item.0 %}
+							<option selected> {{ todo.get_priority_display }} </option>
+						{% else %}
+							<option> {{ item.1 }} </option>
+						{% endif %}
+					{% endfor %}
+				</select>
+			</div>
+
+			<div class="col-md-2">
+				<label>Status</label>
+				<select name="status" class="form-control">
+					{% for item in statusList %}
+						{% if todo.status == item.0 %}
+							<option selected> {{ todo.get_status_display }} </option>
+						{% else %}
+							<option> {{ item.1 }} </option>
+						{% endif %}
+					{% endfor %}
+				</select>
+			</div>		
+			<div class="col-md-2"></div>	
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-md-3"></div>
+
+			<div class="col-md-7">
+				<label>Additional details</label>
+				<textarea class="form-control" rows="6" name='moreinfo'>
+					{{ todo.moreinfo }}
+				</textarea>
+			</div>
+
+			<div class="col-md-2"></div>
+		</div>
+
+	</div>
+
+	<div class="text-center">
+		<input type="submit" value="Save" class="btn btn-primary">
+	</div>
+	
+</form>
+
+{% endblock %}

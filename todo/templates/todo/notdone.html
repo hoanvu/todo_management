@@ -1,0 +1,68 @@
+<div id="content">
+
+	{% if todoList %}
+		<a href="#" id="seeAll"> <span id="seeAllText">See all >></span>  </a>
+	{% endif %}
+
+	<form class="form">
+		{% csrf_token %}
+		<div class="container">
+
+
+
+			<div class="row top-buffer row-header">
+				<div class="col-md-7">
+					<p> <strong>Content</strong> </p>
+				</div>
+				<div class="col-md-2">
+					<p> <strong>Created at</strong> </p>
+				</div>
+				<div class="col-md-1">
+					<p> <strong>Priority</strong> </p>
+				</div>
+				<div class="col-md-2">
+					<p> <strong>Status</strong> </p>
+				</div>
+			</div>
+
+
+			{% for todo in todoList %}
+				<div class="row top-buffer c_{{todo.status}} o_{{todo.status}}" id="o_{{todo.status}}">
+					<div class="col-md-7">
+						<div class="todoContent"> <a href="{% url 'todo:todoDetails' todo.id %}">
+							{{todo.content}}</a>
+						</div>
+					</div>
+
+					<div class="col-md-2">
+						{{ todo.dateCreated | date:'d/m/Y' }} - 
+						{{ todo.dateCreated | date:'h:i' }}
+					</div>
+
+					<div class="col-md-1">
+						{{ todo.get_priority_display }}					
+					</div>
+
+					<div class="col-md-2 {{ todo.get_status_display }}">
+						{{ todo.get_status_display }}		
+					</div>
+				</div>	
+			{% endfor %}
+
+		</div>
+
+	</form>
+	<br>
+
+	{% if message %}
+		<p class="text-center">{{ message }}</p>
+	{% endif %}
+
+</div>
+
+
+
+
+
+
+

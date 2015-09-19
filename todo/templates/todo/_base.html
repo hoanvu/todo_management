@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<title>Toto Management</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'todo/css/style.css' %}">
+
+<div class="container">
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="{% url 'todo:index' %}">Todo Management System</a>
+			{% if user.is_authenticated %}	<!-- if user is logged in, show Logout link -->
+				<p class="navbar-text navbar-left">
+					<a href="{% url 'todo:changePassword' %}">Change password</a>
+				</p>
+				<p class="navbar-text navbar-right logout"> Hi, {{ user.username }} -
+					<a href="{% url 'todo:userLogout' %}"> 
+						Logout 
+					</a> 
+				</p>
+			{% else %}
+				<p class="navbar-text navbar-right register"> <a href="{% url 'todo:userRegister' %}"> Register an account </a> </p>
+			{% endif %}
+		</div>
+	</nav>
+
+	<!-- Sub template -->
+	{% block body %} 
+	{% endblock %}
+
+	<hr>
+	<footer>
+		<p class="text-muted text-center credit"> Todo Management - 2015 </p>
+	</footer>
+</div>
+
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="{% static 'todo/js/main.js' %}"></script>

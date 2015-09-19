@@ -1,0 +1,69 @@
+{% extends 'todo/_base.html' %}
+
+{% block body %}
+
+	<div class="registerForm">
+
+		<form action="{% url 'todo:userRegister' %}" method="post">
+			{% csrf_token %}
+
+			{% if message %}
+		    <div id="message">
+		      <p> <strong> {{ message }} </strong> </p>
+		    </div>
+			{% endif %}
+
+				<br><h3 class="text-center"> <strong>Register Account</strong> </h3><br>
+
+        <div class="form-group">  
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <label>Username: </label>
+              <input type="text" name="username" class="form-control">
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+        </div>
+
+        <div class="form-group">  
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <label>Email: </label> 
+              <input type="email" name="email" class="form-control"> 
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+        </div>
+
+        <div class="form-group">  
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <label class="metaText">Password: </label> 
+              <input type="password" name="password" class="form-control"> 
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+        </div>
+
+        <div class="form-group">  
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+              <label>Re-enter Password: </label> 
+              <input type="password" name="repassword" class="form-control"> 
+            </div>
+            <div class="col-md-4"></div>
+          </div>
+        </div>        
+
+        <div class="text-center">
+          <input type="submit" value="Register" class="btn btn-primary">
+        </div>
+        
+		</form>
+	</div>
+
+{% endblock %}

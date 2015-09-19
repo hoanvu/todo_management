@@ -1,0 +1,76 @@
+.loginForm { margin: 0 auto; }
+
+.registerForm { margin: 0 auto; }
+
+.logout, .register { padding-right: 20px; }
+
+.status {
+	align: right;
+	width: 150px;
+}
+
+.priority { width: 80px; }
+
+.dateCreated { width: 200px; }
+
+.high { color: red; }
+
+.medium { color: blue; }
+
+.low { color: green; }
+
+#message { color: red; }
+
+.a { boder: 1px solid black; }
+
+#createTodoForm {
+	display: inline!important;
+	padding-left: 7px;
+}
+
+#createTodoDiv {
+	border: 1px solid #E6EBE6;
+	border-radius: 4px;
+	padding: 10px;
+}
+
+#newTodoContent {
+	width: 750px;
+	height: 30px;
+}
+
+#priorityOpt {
+	height: 30px;
+	width: 90px;
+}
+
+.Done { color: green; }
+
+.Cancelled { color: red; }
+
+.In { color: blue;}
+
+.Pending { color: #CC9900;}
+
+#seeAll { padding-left: 8px; }
+
+#content { padding-top: 20px; }
+
+.c_2, .c_3 {
+	display: none;
+}
+
+.top-buffer {
+	height: 40px;
+	padding-top: 8px;
+}
+
+div.row.top-buffer {
+	border: 1px solid #B2C2B2;
+}
+
+.row.top-buffer + .row {
+border-top:0;
+}
+
+.row.row-header { background-color: #B2C2B2; }

@@ -3,6 +3,7 @@
 ### Giới thiệu
 + Hệ thống này hỗ trợ các tính năng cơ bản nhất để quản lí đầu việc.
 + Sử dụng <strong>Django 1.8</strong> và <strong>Python 2.7.10</strong>
++ Database: <strong>SQLite3</strong>
 
 ### Tính năng
 Hệ thống bao gồm các tính năng sau:
@@ -18,3 +19,11 @@ Hệ thống bao gồm các tính năng sau:
 	+ User cần đăng nhập để sử dụng hệ thống, nếu không sẽ hiển thị trang đăng nhập
 	+ Thay đổi mật khẩu
 	+ Đăng kí tài khoản mới
+
+### Cách sử dụng
+Các bạn có thể checkout repo này về và dùng lệnh
+```
+$ cd todo_management
+$ python manage.py runserver
+```
+để bắt đầu đăng kí tài khoản và sử dụng hệ thống.

@@ -27,3 +27,12 @@ $ cd todo_management
 $ python manage.py runserver
 ```
 để bắt đầu đăng kí tài khoản và sử dụng hệ thống.
+
+### Screenshots
+Dưới đây là một số hình ảnh của hệ thống:
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+![Todo management 1](http://s16.postimg.org/m3wqcen3p/image.jpg)
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+![Todo management 2](http://s16.postimg.org/hti2gti0l/image.jpg)
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+![Todo management 3](http://s16.postimg.org/y388jpsol/image.jpg)

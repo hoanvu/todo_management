@@ -8,8 +8,6 @@
 		{% csrf_token %}
 		<div class="container">
 
-
-
 			<div class="row top-buffer row-header">
 				<div class="col-md-7">
 					<p> <strong>Content</strong> </p>
@@ -25,9 +23,8 @@
 				</div>
 			</div>
 
-
 			{% for todo in todoList %}
-				<div class="row top-buffer c_{{todo.status}} o_{{todo.status}}" id="o_{{todo.status}}">
+				<div class="row top-buffer c_{{todo.status}} o_{{todo.status}}">
 					<div class="col-md-7">
 						<div class="todoContent"> <a href="{% url 'todo:todoDetails' todo.id %}">
 							{{todo.content}}</a>
@@ -35,8 +32,8 @@
 					</div>
 
 					<div class="col-md-2">
-						{{ todo.dateCreated | date:'d/m/Y' }} - 
-						{{ todo.dateCreated | date:'h:i' }}
+						{{ todo.created_date | date:'d/m/Y' }} - 
+						{{ todo.created_date | date:'h:i A' }}
 					</div>
 
 					<div class="col-md-1">
@@ -50,7 +47,6 @@
 			{% endfor %}
 
 		</div>
-
 	</form>
 	<br>
 

@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from .models import Todo
 
 class TodoAdmin(admin.ModelAdmin):
-	list_display = ('content', 'owner', 'dateCreated', 'status', 'priority')
+	list_display = ('content', 'owner', 'status', 'priority')
 	search_fields = ['content']
 	list_filter = ['owner', 'status', 'priority']
 

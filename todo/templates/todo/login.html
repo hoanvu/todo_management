@@ -4,40 +4,25 @@
 
 	<div class="loginForm">
 
-		{% if message %}
-	    <div id="message">
-	      <strong> {{ message }} </strong>
-	    </div>
-		{% endif %}
-
 		<form action="{% url 'todo:userLogin' %}" method="post">
 			{% csrf_token %}
 
       <br><h2 class="text-center"><strong>User Login</strong></h2> <br>
 
-      <div class="form-group">
-        <div class="row">
-          <div class="col-md-4"></div>
-          <div class="col-md-4">
-            <label>Username: </label>
-            <input type="text" name="username" class="inputField form-control">
-          </div>
-          <div class="col-md-4"></div>
+      {% include 'todo/form_snippet.html' with form=login_form %}
+      
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          {% if message %}
+            <div id="message">
+              <strong> {{ message }} </strong>
+            </div>
+          {% endif %} 
         </div>
+        <div class="col-md-4"></div>
+      </div> <br>
 
-      </div>
-
-      <div class="form-group">
-        <div class="row">
-          <div class="col-md-4"></div>
-          <div class="col-md-4">
-            <label class="metaText">Password: </label> 
-            <input type="password" name="password" class="inputField form-control">
-          </div>
-          <div class="col-md-4"></div>
-        </div>
-      </div>
- 
       <div class="text-center">
         <input type="submit" value="Login" class="btn btn-primary">
       </div>

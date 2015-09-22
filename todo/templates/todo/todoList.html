@@ -1,26 +1,24 @@
 {% extends 'todo/_base.html' %}
+{% load widget_tweaks %}
 
 {% block body %}
 
 	<div id="createTodoDiv">
-		<form id="createTodoForm" action="{% url 'todo:createTodo' %}" method="post">
+		<form class="form-inline" id="createTodoForm" action="{% url 'todo:createTodo' %}" method="post">
 			{% csrf_token %}
 
-			<label>What to do? </label> &nbsp;
-			<input type="text" id="newTodoContent" name="content">
-			&nbsp; &nbsp;
+			<div class="form-group">
+				{{ new_todo_form.content.label_tag }}			
+				{{ new_todo_form.content | attr:"class:form-control" }}
+			</div> &nbsp;&nbsp;
 
-			<label>Priority: </label> &nbsp;
+			<div class="form-group">
+				{{ new_todo_form.priority.label_tag }}
+				{{ new_todo_form.priority | attr:"class:form-control" }}
+			</div> &nbsp;&nbsp;
 
-			<select id="priorityOpt" name="priority">
-				{% for num, display in pdict.items %}
-					<option value="{{ display }}"> {{ display }} </option>
-				{% endfor %}
-			</select>
-			&nbsp; &nbsp;
-
-			<input type="submit" value="Create" class="btn btn-primary btn-sm">			
-
+			<input type="submit" value="Create" class="btn btn-primary btn-sm">	
+		
 		</form>
 	</div>
 

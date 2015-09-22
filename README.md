@@ -1,5 +1,9 @@
 # Hệ thống quản lí đầu việc
 
+### Cập nhật
++ Sep 22nd, 2015
+	+ Update all forms to use Django Form and ModelForm
+
 ### Giới thiệu
 + Hệ thống này hỗ trợ các tính năng cơ bản nhất để quản lí đầu việc.
 + Sử dụng <strong>Django 1.8</strong> và <strong>Python 2.7.10</strong>

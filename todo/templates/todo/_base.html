@@ -2,7 +2,7 @@
 {% load staticfiles %}
 
 <title>Toto Management</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'todo/css/bootstrap.min.css' %}">
 <link rel="stylesheet" href="{% static 'todo/css/style.css' %}">
 
 <div class="container">
@@ -34,5 +34,5 @@
 	</footer>
 </div>
 
-<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="{% static 'todo/js/jquery.min.js' %}"></script>
 <script src="{% static 'todo/js/main.js' %}"></script>

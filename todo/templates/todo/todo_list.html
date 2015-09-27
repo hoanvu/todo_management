@@ -4,7 +4,7 @@
 {% block body %}
 
 	<div id="createTodoDiv">
-		<form class="form-inline" id="createTodoForm" action="{% url 'todo:createTodo' %}" method="post">
+		<form class="form-inline" id="createTodoForm" action="{% url 'todo:create_todo' %}" method="post">
 			{% csrf_token %}
 
 			<div class="form-group">

@@ -11,15 +11,17 @@
 			<a class="navbar-brand" href="{% url 'todo:index' %}">Todo Management System</a>
 			{% if user.is_authenticated %}	<!-- if user is logged in, show Logout link -->
 				<p class="navbar-text navbar-left">
-					<a href="{% url 'todo:changePassword' %}">Change password</a>
+					<a href="{% url 'todo:change_password' %}">Change password</a>
 				</p>
 				<p class="navbar-text navbar-right logout"> Hi, {{ user.username }} -
-					<a href="{% url 'todo:userLogout' %}"> 
+					<a href="{% url 'todo:user_logout' %}"> 
 						Logout 
 					</a> 
 				</p>
 			{% else %}
-				<p class="navbar-text navbar-right register"> <a href="{% url 'todo:userRegister' %}"> Register an account </a> </p>
+				<p class="navbar-text navbar-right register"> 
+					<a href="{% url 'todo:user_register' %}"> Register an account </a> 
+				</p>
 			{% endif %}
 		</div>
 	</nav>

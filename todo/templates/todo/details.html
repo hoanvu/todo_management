@@ -6,7 +6,7 @@
 <h2 class="text-center"> <strong>{{ todo.content }}</strong></h2>
 <br>
 
-<form action="{% url 'todo:editTodo' todo.id %}" method="post">
+<form action="{% url 'todo:edit_todo' todo.id %}" method="post">
 {% csrf_token %}
 
 	<div class="form-group">

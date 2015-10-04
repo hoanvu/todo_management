@@ -1,8 +1,8 @@
 # Hệ thống quản lí đầu việc
 
 ### Cập nhật
-+ Sep 22nd, 2015
-	+ Update all forms to use Django Form and ModelForm
++ 22/9/2015: Sử dụng Form và ModelForm cho tất cả form trong project
++ 4/10/2015: Tách các tính năng liên quan tới user: đăng kí, login, logout, ... ra 1 app riêng (<strong>accounts</strong>)
 
 ### Giới thiệu
 + Hệ thống này hỗ trợ các tính năng cơ bản nhất để quản lí đầu việc.
